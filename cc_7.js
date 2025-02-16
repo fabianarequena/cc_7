@@ -72,3 +72,20 @@ console.log(filterHighValueTransactions(transactions, amount => amount > 1000));
 
 // Here we greated a function that filters values and then given an array, we filtered the high-value transactions
 
+
+// Task 7: Budget Tracker
+
+function createBudgetTracker() {
+    let balance = 0;
+    return function(expense) {
+        balance -= expense;
+        return `Current Balance: -$${-balance}`;
+    };
+}
+
+let budget = createBudgetTracker();
+console.log(budget(300)); // Expected: "Current Balance: -$300"
+console.log(budget(200)); // Expected: "Current Balance: -$500"
+
+// Here we developed a budget tracker and used -= to show negatuve values 
+
